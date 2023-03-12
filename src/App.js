@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-const { Fibonnacci } = require('./components/Fibonnacci')
+const { FibonacciForm } = require('./components/FibonacciForm')
 
 function App() {
   return (
-    <Fibonnacci name='Leonardo' />
+    <FibonacciForm name='Leonardo' />
   );
 }
 
