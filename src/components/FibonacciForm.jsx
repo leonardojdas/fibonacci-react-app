@@ -37,8 +37,7 @@ export function FibonacciForm(props) {
     if(isNaN(number) || numberRange) {
       msg = 'Please inform only numbers between 1-50';
     } else {
-      // msg = 'Check';
-      msg = f.Fibonacci(number, fSize);
+      msg = f.fibonacci(number, fSize);
     }
 
     console.log(msg);
