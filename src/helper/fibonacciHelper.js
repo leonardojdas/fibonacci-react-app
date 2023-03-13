@@ -1,5 +1,5 @@
 export class FibonacciHelper {
-  //
+  // TODO: add comment
   loadFibonacci(fLength) {
     const fArray = [...Array(fLength).keys()].reduce((acc, i) => {
       if(i > 1) {
@@ -14,7 +14,7 @@ export class FibonacciHelper {
     return fArray;
   }
   
-  //
+  // TODO: add comment
   Fibonacci(n, size) {
     const fArray = this.loadFibonacci(size);
 

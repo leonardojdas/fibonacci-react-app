@@ -1,19 +1,46 @@
+import { useState } from 'react';
 import { FibonacciHelper } from '../helper/fibonacciHelper'
 
 export function FibonacciForm(props) {
+  const [number, setNumber] = useState(0);
   const fSize = 10;
-  const a = new FibonacciHelper();
-  const b = a.Fibonacci(2, fSize);
-
-  console.log(b);
+  const f = new FibonacciHelper();
 
   return (
     <div>
       Hello, {props.name}
 
-      <input type='text' />
-      <button>Button</button>
-      <span className='material-symbols-outlined'>done</span>
+      <input
+        type='text'
+        id='number'
+        onChange={e => setNumber(Number(e.target.value))}
+      />
+
+      <button
+        onClick={handleValidation}
+      >
+        Button
+      </button>
+      
+      <span
+        className='material-symbols-outlined'
+      >
+        Done
+      </span>
     </div>
   );
+
+  function handleValidation() {
+    let numberRange = number < 1 || number > 50;
+    let msg = '';
+
+    if(isNaN(number) || numberRange) {
+      msg = 'Please inform only numbers between 1-50';
+    } else {
+      // msg = 'Check';
+      msg = f.Fibonacci(number, fSize);
+    }
+
+    console.log(msg);
+  }
 }
