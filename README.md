@@ -1,1 +1,1 @@
-Fibonnacci App that validates whether the input is part of Fibonacci's sequence or not.
+A Fibonnacci App that validates whether the input is part of Fibonacci sequence or not.
