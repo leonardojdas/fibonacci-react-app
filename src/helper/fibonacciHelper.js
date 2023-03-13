@@ -1,6 +1,6 @@
 export class FibonacciHelper {
   // TODO: add comment
-  loadFibonacci(fLength) {
+  loadFibonacciSequence(fLength) {
     let fArray = [];
 
     try {
@@ -22,7 +22,7 @@ export class FibonacciHelper {
   
   // TODO: add comment
   fibonacci(n, size) {
-    const fArray = this.loadFibonacci(size);
+    const fArray = this.loadFibonacciSequence(size);
 
     return fArray.includes(n);
   }

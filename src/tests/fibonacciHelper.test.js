@@ -17,7 +17,7 @@ describe('FibonacciHelper Class', function() {
 
     // TODO: add comment
     it('Method loadFibonacci - inputs: fLength=10: expected true (<fLength> is a valid number > 0 returning an array with 10 elements)', function() {
-      const received = f.loadFibonacci(10);
+      const received = f.loadFibonacciSequence(10);
       const expected = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34];
 
       expect(received).to.have.same.members(expected);
@@ -35,7 +35,7 @@ describe('FibonacciHelper Class', function() {
 
     // TODO: add comment
     it('Method fibonacci - inputs: n=\'x\' size=10: expected false (<n> must be a valid number > 0)', function() {
-      const received = f.fibonacci('x', -1);
+      const received = f.fibonacci('x', 10);
       const expected = false;
 
       assert.equal(received, expected);
