@@ -19,7 +19,7 @@ export class FibonacciHelper {
         return acc;
       }, []);
     } catch(err) {
-      console.log(`Error loading the sequence, message: ${err}`);
+      // console.log(`Error loading the sequence, message: ${err}`);
     }
 
     return fArray;
