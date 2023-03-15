@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,72 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* NEW STYLES */
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  align-content: center;
+  background-color: #f7f9fa;
+  color: #202124;
+}
+
+.container {
+  width: 450px;
+  background-color: #ffffff;
+  padding: 50px 30px;
+  border-radius: 15px;
+  display: grid;
+  justify-content: center;
+}
+
+.title {
+  font-size: 1.4em;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.wrapper-content {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.material-icons {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-size: 2.5em;
+}
+
+.valid {
+  color: #39c661;
+}
+
+.invalid {
+  color: #dc3545;
+}
+
+
+/* BOOTSTRAP */
+
+.form-control {
+  width: 150px;
+}
+
+.btn {
+  width: max-content;
+}
+
+.form-floating {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-floating > label {
+  position: inherit;
+  margin-top: -57px;
+  overflow: inherit;
 }

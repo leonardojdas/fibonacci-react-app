@@ -1,10 +1,15 @@
 export class FibonacciHelper {
-  // TODO: add comment
-  loadFibonacciSequence(fLength) {
+  /**
+   * Creates a Fibonacci sequence array with <size> elements.
+   * 
+   * @param {number} <size> an integer greater than 0
+   * @returns {array} <fArray> an array with the size of <size> elements
+   */
+  loadFibonacciSequence(size) {
     let fArray = [];
 
     try {
-      fArray = [...Array(fLength).keys()].reduce((acc, i) => {
+      fArray = [...Array(size).keys()].reduce((acc, i) => {
         if(i > 1) {
           acc.push(acc[i - 2] + acc[i - 1]);
         } else {
@@ -20,7 +25,13 @@ export class FibonacciHelper {
     return fArray;
   }
   
-  // TODO: add comment
+  /**
+   * Checks if the given number is part of the Fibonacci sequence
+   *
+   * @param {number} <n> an integer in the range [1-50]
+   * @param {number} <size> an integer greater than 0
+   * @returns {boolean} <true> if the number if part of Fibonacci sequence and <false> if not
+   */
   fibonacci(n, size) {
     const fArray = this.loadFibonacciSequence(size);
 

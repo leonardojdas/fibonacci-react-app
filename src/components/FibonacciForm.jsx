@@ -1,45 +1,76 @@
 import { useState } from 'react';
 import { FibonacciHelper } from '../helper/fibonacciHelper'
 
-export function FibonacciForm(props) {
+export function FibonacciForm() {
   const [number, setNumber] = useState(0);
   const fSize = 10;
   const f = new FibonacciHelper();
 
   return (
-    <div>
-      Hello, {props.name}
+    <div className='wrapper'>
 
-      <input
-        type='text'
-        id='number'
-        onChange={e => setNumber(Number(e.target.value))}
-      />
+      <div className='container'>
+        <div className='title'>
+          Fibonacci Checker
+        </div>
 
-      <button
-        onClick={handleValidation}
-      >
-        Is Fibonacci?
-      </button>
+        <div className='form-floating'>
+          <input
+            type='text'
+            id='number'
+            className='form-control'
+            placeholder='placeholder'
+            onChange={e => setNumber(Number(e.target.value))}
+          />
+          <label htmlFor='number'>Number</label>
+        </div>
 
-      <span
-        id='display'
-        className='material-icons'
-      ></span>
+        <div className='wrapper-content'>
+          <button
+            onClick={handleValidation}
+            className='btn btn-primary'
+          >
+            Is Fibonacci?
+          </button>
+        </div>
+
+        <div className='wrapper-content'>
+          <span
+            id='result'
+            className=''
+          ></span>
+        </div>
+      </div>
 
     </div>
   );
 
+  /**
+   * Validates the value informed, displaying a proper message to the client
+   * 
+   * @param {void}
+   * @returns {void}
+   */
   function handleValidation() {
-    let numberRange = number < 1 || number > 50;
-    const display = document.querySelector('#display');
+    const numberOutRange = number < 1 || number > 50;
+    const result = document.querySelector('#result');
 
-    if(isNaN(number) || numberRange) {
-      display.innerHTML = '';
-      alert('Please inform only numbers between 1-50');
+    result.classList.remove('material-icons');
+    result.classList.remove('valid');
+    result.classList.remove('invalid');
+
+    if(isNaN(number) || numberOutRange) {
+      result.innerHTML = 'Please inform only numbers between 1-50';
     } else {
-      if(f.fibonacci(number, fSize)) display.innerHTML = 'check';
-      else display.innerHTML = 'clear';
+      result.classList.add('material-icons');
+
+      if(f.fibonacci(number, fSize)) {
+        result.classList.add('valid');
+        result.innerHTML = 'check';
+      } else {
+        result.classList.add('invalid');
+        result.innerHTML = 'clear';
+      }
     }
   }
 }

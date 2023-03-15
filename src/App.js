@@ -3,7 +3,7 @@ const { FibonacciForm } = require('./components/FibonacciForm')
 
 function App() {
   return (
-    <FibonacciForm name='Leonardo' />
+    <FibonacciForm />
   );
 }
 
